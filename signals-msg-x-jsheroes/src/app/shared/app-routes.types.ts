@@ -10,4 +10,9 @@ export enum AppRoutes {
   ExampleEffectCleanup = 'examples/effects/cleanup',
   // LINKED SIGNAL
   ExampleLinkedSignal = 'examples/linked-signal',
+  // RESOURCE
+  ExampleResourceBasicsSimple = 'examples/resource/basics/simple',
+  ExampleResourceBasicsRx = 'examples/resource/basics/rx',
+  ExampleResourceBasicsHttp = 'examples/resource/basics/http',
+  ExampleResourceBasicsStream = 'examples/resource/basics/stream',
 }

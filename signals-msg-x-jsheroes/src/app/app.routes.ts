@@ -8,6 +8,10 @@ import { EffectBadExampleComponent } from './examples/primitives/effects/usecase
 import { EffectGoodExampleComponent } from './examples/primitives/effects/usecase/effect-good-example.component';
 import { EffectCleanupExampleComponent } from './examples/primitives/effects/cleanup/effect-cleanup-example.component';
 import { LinkedSignalExampleEntryComponent } from './examples/primitives/linked-signal/linked-signal-example-entry.component';
+import { ResourceExampleSimpleComponent } from './examples/primitives/resource/basics/resource-example-simple.component';
+import { ResourceExampleRxComponent } from './examples/primitives/resource/basics/resource-example-rx.component';
+import { ResourceExampleHttpComponent } from './examples/primitives/resource/basics/resource-example-http.component';
+import { ResourceExampleStreamComponent } from './examples/primitives/resource/basics/resource-example-stream.component';
 
 export const routes: Routes = [
   // DO AND DONT
@@ -44,5 +48,22 @@ export const routes: Routes = [
   {
     path: AppRoutes.ExampleLinkedSignal,
     component: LinkedSignalExampleEntryComponent,
+  },
+  // RESOURCES
+  {
+    path: AppRoutes.ExampleResourceBasicsSimple,
+    component: ResourceExampleSimpleComponent,
+  },
+  {
+    path: AppRoutes.ExampleResourceBasicsRx,
+    component: ResourceExampleRxComponent,
+  },
+  {
+    path: AppRoutes.ExampleResourceBasicsHttp,
+    component: ResourceExampleHttpComponent,
+  },
+  {
+    path: AppRoutes.ExampleResourceBasicsStream,
+    component: ResourceExampleStreamComponent,
   },
 ];

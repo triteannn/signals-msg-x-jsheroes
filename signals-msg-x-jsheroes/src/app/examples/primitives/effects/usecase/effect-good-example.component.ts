@@ -37,7 +37,7 @@ export class EffectGoodExampleComponent {
       this.updateForm(value);
     });
 
-    // what about toObservable? Under the hood, this is still and effect
+    // what about toObservable? Under the hood, this is still an effect
     toObservable(this.someInput).subscribe((value) => {
       this.updateForm(value);
     });

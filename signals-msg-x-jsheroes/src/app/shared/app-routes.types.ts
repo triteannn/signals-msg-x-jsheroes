@@ -8,4 +8,6 @@ export enum AppRoutes {
   ExampleEffectUseCaseBad = 'examples/effects/usecase/bad',
   ExampleEffectUseCaseGood = 'examples/effects/usecase/good',
   ExampleEffectCleanup = 'examples/effects/cleanup',
+  // LINKED SIGNAL
+  ExampleLinkedSignal = 'examples/linked-signal',
 }

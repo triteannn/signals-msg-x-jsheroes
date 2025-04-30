@@ -7,6 +7,7 @@ import { SignalsConditionalIssueComponent } from './examples/doanddonts/conditio
 import { EffectBadExampleComponent } from './examples/primitives/effects/usecase/effect-bad-example.component';
 import { EffectGoodExampleComponent } from './examples/primitives/effects/usecase/effect-good-example.component';
 import { EffectCleanupExampleComponent } from './examples/primitives/effects/cleanup/effect-cleanup-example.component';
+import { LinkedSignalExampleEntryComponent } from './examples/primitives/linked-signal/linked-signal-example-entry.component';
 
 export const routes: Routes = [
   // DO AND DONT
@@ -38,5 +39,10 @@ export const routes: Routes = [
   {
     path: AppRoutes.ExampleEffectCleanup,
     component: EffectCleanupExampleComponent,
+  },
+  // LINKED SIGNAL
+  {
+    path: AppRoutes.ExampleLinkedSignal,
+    component: LinkedSignalExampleEntryComponent,
   },
 ];

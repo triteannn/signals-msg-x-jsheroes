@@ -5,7 +5,7 @@ import {
   ResourceStatus,
   signal,
 } from '@angular/core';
-import { mockUserFetch } from '../resource-mock.utils';
+import { mockUserFetch } from '../../../../shared/resource-mock.utils';
 import { MatButton } from '@angular/material/button';
 
 @Component({

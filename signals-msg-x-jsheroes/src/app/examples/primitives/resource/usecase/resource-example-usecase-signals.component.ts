@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { delay, filter, materialize, shareReplay, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { MockUser } from '../resource-mock.utils';
+import { MockUser } from '../../../../shared/resource-mock.utils';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
 

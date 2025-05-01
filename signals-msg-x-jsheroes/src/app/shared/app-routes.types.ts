@@ -1,6 +1,7 @@
 export enum AppRoutes {
   // PRIMITIVES
   // MANUAL SIGNAL STATE MANAGEMENT
+  ExampleManualSignalStateManagement = 'examples/state-management/manual',
   // DO AND DONT
   ExampleDoAndDontSignalsConditionalIssue = 'examples/doanddonts/conditional-issue',
   ExampleDoAndDontEffectLoopIssue = 'examples/doanddonts/effect-loop',

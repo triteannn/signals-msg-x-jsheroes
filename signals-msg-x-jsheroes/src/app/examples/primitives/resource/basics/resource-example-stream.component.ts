@@ -4,7 +4,10 @@ import {
   resource,
   ResourceStatus,
 } from '@angular/core';
-import { mockStreamSignal, mockUsersFetchStream } from '../resource-mock.utils';
+import {
+  mockStreamSignal,
+  mockUsersFetchStream,
+} from '../../../../shared/resource-mock.utils';
 import { MatButton } from '@angular/material/button';
 
 @Component({

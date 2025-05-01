@@ -5,15 +5,18 @@ import {
   effect,
   signal,
 } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-doanddonts-signals-conditional-issue',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Signals Conditional Issue</h1>
-      <button (click)="toggleCount()">Toggle Show Count</button>
-      <button (click)="updateCount()">Add to Count</button>
+      <button mat-stroked-button (click)="toggleCount()">
+        Toggle Show Count
+      </button>
+      <button mat-stroked-button (click)="updateCount()">Add to Count</button>
       <div>
         Show Count: {{ showCount() }} <br />
         Count: {{ count() }} <br />

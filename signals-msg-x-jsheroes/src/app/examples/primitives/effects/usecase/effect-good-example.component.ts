@@ -6,13 +6,14 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { toObservable } from '@angular/core/rxjs-interop';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-effect-good-example',
   template: `
     <div>
       <h1>Effect Good Example</h1>
-      <button (click)="onUpdateInput()">Update Input</button>
+      <button mat-stroked-button (click)="onUpdateInput()">Update Input</button>
       <div>
         ID: {{ myFormGroup.value.id }} <br />
         Name: {{ myFormGroup.value.name }}
@@ -20,6 +21,7 @@ import { toObservable } from '@angular/core/rxjs-interop';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatButton],
 })
 export class EffectGoodExampleComponent {
   someInput = signal<{ id: string; name: string } | null>(null);

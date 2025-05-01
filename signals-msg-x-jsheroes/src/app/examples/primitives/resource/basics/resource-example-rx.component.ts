@@ -6,15 +6,16 @@ import {
 } from '@angular/core';
 import { mockUserFetchRx } from '../resource-mock.utils';
 import { rxResource } from '@angular/core/rxjs-interop';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-resource-example-rx',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Resource Example Rx Usage</h1>
-      <button (click)="onSetUserId()">Set User Id</button>
-      <button (click)="onReload()">Reload</button>
+      <button mat-stroked-button (click)="onSetUserId()">Set User Id</button>
+      <button mat-stroked-button (click)="onReload()">Reload</button>
       <div>
         <div>Status: {{ ResourceStatusMap[userResourceRx.status()] }}</div>
         <div>Loading: {{ userResourceRx.isLoading() }}</div>

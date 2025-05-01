@@ -9,13 +9,14 @@ import { delay, filter, materialize, shareReplay, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MockUser } from '../resource-mock.utils';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-resource-example-usecase-signals',
   template: `
     <div>
       <h1>Resource Example UseCase Signals Usage</h1>
-      <button (click)="onChangePage()">Change Page</button>
+      <button mat-stroked-button (click)="onChangePage()">Change Page</button>
       <div>
         @let errorValue = error();
         @if (errorValue) {
@@ -34,7 +35,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: [MatButton],
 })
 export class ResourceExampleUseCaseSignalsComponent {
   private readonly httpClient = inject(HttpClient);

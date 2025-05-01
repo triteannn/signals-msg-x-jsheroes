@@ -7,14 +7,15 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-effects-example-second',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Effects Basic Example (Second)</h1>
-      <button (click)="updateCount()">Add to Count</button>
+      <button mat-stroked-button (click)="updateCount()">Add to Count</button>
       <div>{{ count() }}</div>
     </div>
   `,

@@ -8,13 +8,14 @@ import { HttpClient } from '@angular/common/http';
 import { MockUser } from '../resource-mock.utils';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { delay } from 'rxjs';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-resource-example-usecase-resource',
   template: `
     <div>
       <h1>Resource Example UseCase Resource Usage</h1>
-      <button (click)="onChangePage()">Change Page</button>
+      <button mat-stroked-button (click)="onChangePage()">Change Page</button>
       <div>
         @let errorValue = data.error();
         @if (errorValue) {
@@ -34,7 +35,7 @@ import { delay } from 'rxjs';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: [MatButton],
 })
 export class ResourceExampleUseCaseResourceComponent {
   private readonly httpClient = inject(HttpClient);

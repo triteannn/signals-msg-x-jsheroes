@@ -14,13 +14,14 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { MockUser } from '../resource-mock.utils';
 import { AsyncPipe } from '@angular/common';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-resource-example-usecase-old',
   template: `
     <div>
       <h1>Resource Example UseCase Old Usage</h1>
-      <button (click)="onChangePage()">Change Page</button>
+      <button mat-stroked-button (click)="onChangePage()">Change Page</button>
       <div>
         @let error = error$ | async;
         @if (error) {
@@ -39,7 +40,7 @@ import { AsyncPipe } from '@angular/common';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, MatButton],
 })
 export class ResourceExampleUseCaseOldComponent {
   private readonly httpClient = inject(HttpClient);

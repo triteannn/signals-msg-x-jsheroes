@@ -3,15 +3,18 @@ import {
   LinkedSignalExampleMainComponent,
   ProductItem,
 } from './linked-signal-example-main.component';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-linked-signal-example-entry',
-  imports: [LinkedSignalExampleMainComponent],
+  imports: [LinkedSignalExampleMainComponent, MatButton],
   template: `
     <div>
       <h1>Linked Signal Example</h1>
       <div>
-        <button (click)="onExternalUpdate()">Trigger External Update</button>
+        <button mat-stroked-button (click)="onExternalUpdate()">
+          Trigger External Update
+        </button>
       </div>
       <div>
         <app-linked-signal-example-main [products]="products()" />

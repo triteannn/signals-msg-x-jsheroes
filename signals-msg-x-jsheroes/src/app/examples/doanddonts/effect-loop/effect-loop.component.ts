@@ -5,14 +5,15 @@ import {
   signal,
   untracked,
 } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-doanddonts-effect-loop-issue',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Effect Loop Issue</h1>
-      <button (click)="updateCount()">Add to Count</button>
+      <button mat-stroked-button (click)="updateCount()">Add to Count</button>
       <div>{{ count() }}</div>
       <div>Double: {{ double() }}</div>
     </div>

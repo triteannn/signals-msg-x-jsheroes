@@ -1,5 +1,9 @@
-import { Observable, of } from 'rxjs';
-import { HttpInterceptorFn, HttpResponse } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import {
+  HttpErrorResponse,
+  HttpInterceptorFn,
+  HttpResponse,
+} from '@angular/common/http';
 import { ResourceStreamItem, signal, Signal } from '@angular/core';
 
 export type MockUser = { id: string; name: string };
@@ -78,9 +82,19 @@ export const mockUsersInterceptor: HttpInterceptorFn = (req, next) => {
     const foundUser = mockUsers.find((x) => x.id === userId);
 
     if (!foundUser) {
-      return of(new HttpResponse({ status: 404, body: 'User not found' }));
+      return throwError(
+        () =>
+          new HttpErrorResponse({
+            status: 404,
+            statusText: 'Not Found',
+            url: req.url,
+            error: 'User not found',
+          })
+      );
     }
     return of(new HttpResponse({ status: 200, body: foundUser }));
+  } else if (req.url.match(/^\/?api\/users$/)) {
+    return of(new HttpResponse({ status: 200, body: mockUsers }));
   }
 
   return next(req);

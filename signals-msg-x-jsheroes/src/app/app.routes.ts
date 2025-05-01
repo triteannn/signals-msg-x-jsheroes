@@ -12,12 +12,20 @@ import { ResourceExampleSimpleComponent } from './examples/primitives/resource/b
 import { ResourceExampleRxComponent } from './examples/primitives/resource/basics/resource-example-rx.component';
 import { ResourceExampleHttpComponent } from './examples/primitives/resource/basics/resource-example-http.component';
 import { ResourceExampleStreamComponent } from './examples/primitives/resource/basics/resource-example-stream.component';
+import { ResourceExampleUseCaseOldComponent } from './examples/primitives/resource/usecase/resource-example-usecase-old.component';
+import { ResourceExampleUseCaseSignalsComponent } from './examples/primitives/resource/usecase/resource-example-usecase-signals.component';
+import { ResourceExampleUseCaseResourceComponent } from './examples/primitives/resource/usecase/resource-example-usecase-resource.component';
+import { EffectLoopComponent } from './examples/doanddonts/effect-loop/effect-loop.component';
 
 export const routes: Routes = [
   // DO AND DONT
   {
     path: AppRoutes.ExampleDoAndDontSignalsConditionalIssue,
     component: SignalsConditionalIssueComponent,
+  },
+  {
+    path: AppRoutes.ExampleDoAndDontEffectLoopIssue,
+    component: EffectLoopComponent,
   },
   // EFFECTS
   {
@@ -65,5 +73,17 @@ export const routes: Routes = [
   {
     path: AppRoutes.ExampleResourceBasicsStream,
     component: ResourceExampleStreamComponent,
+  },
+  {
+    path: AppRoutes.ExampleResourceUseCaseOld,
+    component: ResourceExampleUseCaseOldComponent,
+  },
+  {
+    path: AppRoutes.ExampleResourceUseCaseSignals,
+    component: ResourceExampleUseCaseSignalsComponent,
+  },
+  {
+    path: AppRoutes.ExampleResourceUseCaseResource,
+    component: ResourceExampleUseCaseResourceComponent,
   },
 ];

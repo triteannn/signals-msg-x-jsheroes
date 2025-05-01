@@ -1,6 +1,7 @@
 export enum AppRoutes {
   // DO AND DONT
   ExampleDoAndDontSignalsConditionalIssue = 'examples/doanddonts/conditional-issue',
+  ExampleDoAndDontEffectLoopIssue = 'examples/doanddonts/effect-loop',
   // EFFECTS
   ExampleEffectBasicsFirst = 'examples/effects/basics/first',
   ExampleEffectBasicsSecond = 'examples/effects/basics/second',
@@ -15,4 +16,7 @@ export enum AppRoutes {
   ExampleResourceBasicsRx = 'examples/resource/basics/rx',
   ExampleResourceBasicsHttp = 'examples/resource/basics/http',
   ExampleResourceBasicsStream = 'examples/resource/basics/stream',
+  ExampleResourceUseCaseOld = 'examples/resource/usecase/old',
+  ExampleResourceUseCaseSignals = 'examples/resource/usecase/signals',
+  ExampleResourceUseCaseResource = 'examples/resource/usecase/resource',
 }

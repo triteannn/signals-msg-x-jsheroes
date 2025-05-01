@@ -12,7 +12,7 @@ import {
   tap,
 } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { MockUser } from '../resource-mock.utils';
+import { MockUser } from '../../../../shared/resource-mock.utils';
 import { AsyncPipe } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 

@@ -4,7 +4,7 @@ import {
   ResourceStatus,
   signal,
 } from '@angular/core';
-import { mockUserFetchRx } from '../resource-mock.utils';
+import { mockUserFetchRx } from '../../../../shared/resource-mock.utils';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
 

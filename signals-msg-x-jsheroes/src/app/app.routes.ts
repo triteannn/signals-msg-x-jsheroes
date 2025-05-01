@@ -16,8 +16,14 @@ import { ResourceExampleUseCaseOldComponent } from './examples/primitives/resour
 import { ResourceExampleUseCaseSignalsComponent } from './examples/primitives/resource/usecase/resource-example-usecase-signals.component';
 import { ResourceExampleUseCaseResourceComponent } from './examples/primitives/resource/usecase/resource-example-usecase-resource.component';
 import { EffectLoopComponent } from './examples/doanddonts/effect-loop/effect-loop.component';
+import { UserManagementComponent } from './examples/state-management/manual/containers/user-management.component';
 
 export const routes: Routes = [
+  // MANUAL SIGNAL STATE MANAGEMENT
+  {
+    path: AppRoutes.ExampleManualSignalStateManagement,
+    component: UserManagementComponent,
+  },
   // DO AND DONT
   {
     path: AppRoutes.ExampleDoAndDontSignalsConditionalIssue,

@@ -5,7 +5,7 @@ import {
   signal,
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MockUser } from '../resource-mock.utils';
+import { MockUser } from '../../../../shared/resource-mock.utils';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { delay } from 'rxjs';
 import { MatButton } from '@angular/material/button';

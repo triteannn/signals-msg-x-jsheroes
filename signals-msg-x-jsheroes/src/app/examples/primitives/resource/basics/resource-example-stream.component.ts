@@ -5,14 +5,15 @@ import {
   ResourceStatus,
 } from '@angular/core';
 import { mockStreamSignal, mockUsersFetchStream } from '../resource-mock.utils';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-resource-example-stream',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Resource Example Stream Usage</h1>
-      <button (click)="onReload()">Reload</button>
+      <button mat-stroked-button (click)="onReload()">Reload</button>
       <div>
         <div>Status: {{ ResourceStatusMap[userListResource.status()] }}</div>
         <div>Loading: {{ userListResource.isLoading() }}</div>

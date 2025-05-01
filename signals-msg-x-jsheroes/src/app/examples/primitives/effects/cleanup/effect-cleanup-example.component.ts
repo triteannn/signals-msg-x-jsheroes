@@ -5,15 +5,18 @@ import {
   EffectRef,
   signal,
 } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-effects-example-cleanup',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Effects Basic Example (Second)</h1>
-      <button (click)="updateCount()">Add to Count</button>
-      <button (click)="onManualDestroy()">Manual Destroy</button>
+      <button mat-stroked-button (click)="updateCount()">Add to Count</button>
+      <button mat-stroked-button (click)="onManualDestroy()">
+        Manual Destroy
+      </button>
       <div>{{ count() }}</div>
     </div>
   `,

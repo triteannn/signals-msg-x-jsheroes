@@ -6,12 +6,13 @@ import {
   linkedSignal,
   signal,
 } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 export type ProductItem = { id: string; name: string; quantity: number };
 
 @Component({
   selector: 'app-linked-signal-example-main',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <div>
@@ -20,7 +21,9 @@ export type ProductItem = { id: string; name: string; quantity: number };
           <div>
             <h3>NAME: {{ product.name }}</h3>
             <div>DEFAULT QUANTITY: {{ product.quantity }}</div>
-            <button (click)="onProductSelected(product.id)">Select This</button>
+            <button mat-stroked-button (click)="onProductSelected(product.id)">
+              Select This
+            </button>
           </div>
         }
       </div>
@@ -30,7 +33,9 @@ export type ProductItem = { id: string; name: string; quantity: number };
         @if (selected) {
           <h3>NAME: {{ selected.name }}</h3>
           <div>Quantity: {{ selectedQuantity() }}</div>
-          <button (click)="updateSelectedQuantity()">Decrease</button>
+          <button mat-stroked-button (click)="updateSelectedQuantity()">
+            Decrease
+          </button>
         }
       </div>
     </div>

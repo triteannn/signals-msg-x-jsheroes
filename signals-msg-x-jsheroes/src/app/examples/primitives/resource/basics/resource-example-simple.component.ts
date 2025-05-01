@@ -6,15 +6,16 @@ import {
   signal,
 } from '@angular/core';
 import { mockUserFetch } from '../resource-mock.utils';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-resource-example-simple',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Resource Example Simple Usage</h1>
-      <button (click)="onSetUserId()">Set User Id</button>
-      <button (click)="onReload()">Reload</button>
+      <button mat-stroked-button (click)="onSetUserId()">Set User Id</button>
+      <button mat-stroked-button (click)="onReload()">Reload</button>
       <div>
         <div>Status: {{ ResourceStatusMap[userResource.status()] }}</div>
         <div>Loading: {{ userResource.isLoading() }}</div>

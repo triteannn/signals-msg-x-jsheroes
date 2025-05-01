@@ -6,15 +6,16 @@ import {
 } from '@angular/core';
 import { httpResource } from '@angular/common/http';
 import { z } from 'zod';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-resource-example-http',
-  imports: [],
+  imports: [MatButton],
   template: `
     <div>
       <h1>Resource Example Http Usage</h1>
-      <button (click)="onSetUserId()">Set User Id</button>
-      <button (click)="onReload()">Reload</button>
+      <button mat-stroked-button (click)="onSetUserId()">Set User Id</button>
+      <button mat-stroked-button (click)="onReload()">Reload</button>
       <div>
         <div>Status: {{ ResourceStatusMap[userResourceHttp.status()] }}</div>
         <div>Loading: {{ userResourceHttp.isLoading() }}</div>

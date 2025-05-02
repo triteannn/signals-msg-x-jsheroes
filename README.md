@@ -13,7 +13,7 @@ This talk dives into the new Angular Reactivity API including Signals — explor
 
 ## Code
 
-All code examples can be found in the [`src/app/examples`](src/app/examples) folder.
+All code examples can be found in the [`src/app/examples`](signals-msg-x-jsheroes/src/app/examples) folder.
 - Many components contain **commented-out code** you can **uncomment** to explore the example behavior.
 - Some examples also include a dedicated `README.md` for context and explanation.
 

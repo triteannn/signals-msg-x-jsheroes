@@ -18,6 +18,7 @@ import { ResourceExampleUseCaseResourceComponent } from './examples/primitives/r
 import { EffectLoopComponent } from './examples/doanddonts/effect-loop/effect-loop.component';
 import { UserManagementComponent } from './examples/state-management/manual/containers/user-management.component';
 import { NormalUserListPageComponent } from './examples/state-management/ngrx/normal-store/pages/normal-user-list-page.component';
+import { SignalsUserListPageComponent } from './examples/state-management/ngrx/signals-store/pages/signals-user-list-page.component';
 
 export const routes: Routes = [
   // MANUAL SIGNAL STATE MANAGEMENT
@@ -28,6 +29,10 @@ export const routes: Routes = [
   {
     path: AppRoutes.ExampleNgrxNormalStateManagement,
     component: NormalUserListPageComponent,
+  },
+  {
+    path: AppRoutes.ExampleNgrxSignalStateManagement,
+    component: SignalsUserListPageComponent,
   },
   // DO AND DONT
   {

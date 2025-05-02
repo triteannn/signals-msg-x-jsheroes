@@ -3,6 +3,7 @@ export enum AppRoutes {
   // MANUAL SIGNAL STATE MANAGEMENT
   ExampleManualSignalStateManagement = 'examples/state-management/manual',
   ExampleNgrxNormalStateManagement = 'examples/state-management/ngrx/normal',
+  ExampleNgrxSignalStateManagement = 'examples/state-management/ngrx/signal',
   // DO AND DONT
   ExampleDoAndDontSignalsConditionalIssue = 'examples/doanddonts/conditional-issue',
   ExampleDoAndDontEffectLoopIssue = 'examples/doanddonts/effect-loop',

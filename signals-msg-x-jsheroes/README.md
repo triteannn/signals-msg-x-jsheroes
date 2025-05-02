@@ -1,59 +1,32 @@
-# SignalsMsgXJsheroes
+# Signals Msg x JS Heroes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+## Overview
 
-## Development server
+This is the repository for the JS Heroes Presentation [It's a Sign(al)! Let's talk Angular Reactivity](https://www.meetup.com/jsheroes/events/307437804/?eventOrigin=group_upcoming_events), hosted at [MSG Systems Romania](https://www.msg-systems.ro/en/)
 
-To start a local development server, run:
+This talk dives into the new Angular Reactivity API including Signals — exploring patterns, examples, and best practices.
 
-```bash
-ng serve
-```
+## Presenters
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [Antonio Marasescu-Duran](https://github.com/antonio-marasescu)
+- [Tudor Tritean](https://github.com/triteannn)
 
-## Code scaffolding
+## Code
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+All code examples can be found in the [`src/app/examples`](src/app/examples) folder.
+- Many components contain **commented-out code** you can **uncomment** to explore the example behavior.
+- Some examples also include a dedicated `README.md` for context and explanation.
 
-```bash
-ng generate component component-name
-```
+## Installation & Running the Project
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone the repository: `git clone git@github.com:triteannn/signals-msg-x-jsheroes.git`
+2. Run `npm install` to install the dependencies.
+3. Run `npm run start` to start the development server.
 
-```bash
-ng generate --help
-```
+## Source Materials
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular Official Documentation](https://angular.dev/overview)
+- [Angular University](https://blog.angular-university.io/)
+- [Joshua Morony](https://www.youtube.com/@JoshuaMorony)
+- [Rainer Hahnekamp](https://www.youtube.com/@RainerHahnekamp)
+- [NGRX](https://ngrx.io/)

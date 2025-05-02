@@ -20,7 +20,7 @@ import { UserManagementComponent } from './examples/state-management/manual/cont
 import { NormalUserListPageComponent } from './examples/state-management/ngrx/normal-store/pages/normal-user-list-page.component';
 import { SignalsUserListPageComponent } from './examples/state-management/ngrx/signals-store/pages/signals-user-list-page.component';
 import { ReadonlyWritableComputedSignalsComponent } from './examples/primitives/base-signals/readonly-writable-computed-signals';
-import { InputModelSignalsComponent } from './examples/primitives/base-signals/input-model-signals';
+import { InputModelSignalsParentComponent } from './examples/primitives/base-signals/input-model/input-model-signals-parent';
 import { QuerySignalsComponent } from './examples/primitives/base-signals/query-signals';
 
 export const routes: Routes = [
@@ -31,7 +31,7 @@ export const routes: Routes = [
   },
   {
     path: AppRoutes.ExampleBaseSignalsInputModel,
-    component: InputModelSignalsComponent,
+    component: InputModelSignalsParentComponent,
   },
   {
     path: AppRoutes.ExampleBaseSignalsQueries,

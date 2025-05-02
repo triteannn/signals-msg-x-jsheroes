@@ -4,6 +4,7 @@ import {
   model,
   computed,
   booleanAttribute,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { MatInput, MatFormField, MatLabel } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -71,6 +72,7 @@ import { MatIcon } from '@angular/material/icon';
     MatCheckbox,
     MatIcon,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputModelSignalsComponent {
   // Regular input signal (required)

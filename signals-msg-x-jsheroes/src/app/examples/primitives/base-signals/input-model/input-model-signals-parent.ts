@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InputModelSignalsComponent } from './input-model-signals';
 
 @Component({
@@ -14,6 +14,7 @@ import { InputModelSignalsComponent } from './input-model-signals';
       <p>No status in parent</p>
     } `,
   imports: [InputModelSignalsComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputModelSignalsParentComponent {
   protected readonly name = 'Tudorel';

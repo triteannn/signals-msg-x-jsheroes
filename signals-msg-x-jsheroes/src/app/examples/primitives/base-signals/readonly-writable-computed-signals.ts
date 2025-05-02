@@ -1,4 +1,10 @@
-import { Component, computed, signal, untracked } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+  untracked,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
@@ -59,7 +65,9 @@ type Task = {
     <p>Incomplete: {{ incompleteCount() }}</p>
 
     @if (hasCompleted()) {
-      <button (click)="clearCompleted()">Clear Completed</button>
+      <button mat-stroked-button (click)="clearCompleted()">
+        Clear Completed
+      </button>
     }
 
     @if (lastAddedTaskDescription()) {
@@ -87,6 +95,7 @@ type Task = {
     MatFormField,
     MatLabel,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReadonlyWritableComputedSignalsComponent {
   // Readonly signal for user name

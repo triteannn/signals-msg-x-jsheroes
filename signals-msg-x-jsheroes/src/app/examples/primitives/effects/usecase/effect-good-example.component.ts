@@ -14,9 +14,9 @@ import { MatButton } from '@angular/material/button';
     <div>
       <h1>Effect Good Example</h1>
       <button mat-stroked-button (click)="onUpdateInput()">Update Input</button>
-      <div>
-        ID: {{ myFormGroup.value.id }} <br />
-        Name: {{ myFormGroup.value.name }}
+      <div class="p-4">
+        <div>ID: {{ myFormGroup.value.id }}</div>
+        <div>Name: {{ myFormGroup.value.name }}</div>
       </div>
     </div>
   `,

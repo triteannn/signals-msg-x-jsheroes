@@ -15,8 +15,10 @@ import { MatButton } from '@angular/material/button';
   template: `
     <div>
       <h1>Effects Basic Example (Second)</h1>
-      <button mat-stroked-button (click)="updateCount()">Add to Count</button>
-      <div>{{ count() }}</div>
+      <div class="flex-row gap-4">
+        <button mat-stroked-button (click)="updateCount()">Add to Count</button>
+      </div>
+      <div class="p-4">Count: {{ count() }}</div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

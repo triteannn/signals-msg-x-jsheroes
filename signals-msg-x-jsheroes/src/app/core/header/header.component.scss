@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  align-items: center;
+  background: var(--mat-sys-primary-container);
+  padding: 1rem;
+
+  .links-section {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  a,
+  span {
+    color: var(--mat-sys-primary);
+  }
+
+  a {
+    font-size: 1rem;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+}

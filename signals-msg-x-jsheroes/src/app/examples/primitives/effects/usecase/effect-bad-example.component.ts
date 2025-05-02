@@ -11,9 +11,9 @@ import {
   template: `
     <div>
       <h1>Effect Bad Example</h1>
-      <div>
-        Count: {{ count() }} <br />
-        Double Count: {{ doubleCount() }}
+      <div class="p-4">
+        <div>Count: {{ count() }}</div>
+        <div>Double Count: {{ doubleCount() }}</div>
       </div>
     </div>
   `,

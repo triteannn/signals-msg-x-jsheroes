@@ -14,8 +14,10 @@ import { MatButton } from '@angular/material/button';
     <div>
       <h1>Effect Loop Issue</h1>
       <button mat-stroked-button (click)="updateCount()">Add to Count</button>
-      <div>{{ count() }}</div>
-      <div>Double: {{ double() }}</div>
+      <div class="p-4">
+        <div>Count: {{ count() }}</div>
+        <div>Double: {{ double() }}</div>
+      </div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

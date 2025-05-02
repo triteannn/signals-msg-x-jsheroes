@@ -11,7 +11,7 @@ import { MatButton } from '@angular/material/button';
   template: `
     <div>
       <h1>Linked Signal Example</h1>
-      <div>
+      <div class="flex-row w-full gap-4">
         <button mat-stroked-button (click)="onExternalUpdate()">
           Trigger External Update
         </button>

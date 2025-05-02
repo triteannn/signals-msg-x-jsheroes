@@ -16,8 +16,10 @@ import { MatButton } from '@angular/material/button';
   template: `
     <div>
       <h1>Resource Example Stream Usage</h1>
-      <button mat-stroked-button (click)="onReload()">Reload</button>
-      <div>
+      <div class="flex-row gap-4">
+        <button mat-stroked-button (click)="onReload()">Reload</button>
+      </div>
+      <div class="p-4">
         <div>Status: {{ ResourceStatusMap[userListResource.status()] }}</div>
         <div>Loading: {{ userListResource.isLoading() }}</div>
         <div>Has Value: {{ userListResource.hasValue() }}</div>
@@ -25,7 +27,7 @@ import { MatButton } from '@angular/material/button';
         @if (userListResource.hasValue()) {
           @for (user of userListResource.value(); track user.id) {
             <div>
-              <h2>User: {{ user.name }}</h2>
+              <h3>User: {{ user.name }}</h3>
             </div>
           }
         }

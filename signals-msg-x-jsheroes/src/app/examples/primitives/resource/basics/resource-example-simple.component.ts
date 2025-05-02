@@ -14,9 +14,11 @@ import { MatButton } from '@angular/material/button';
   template: `
     <div>
       <h1>Resource Example Simple Usage</h1>
-      <button mat-stroked-button (click)="onSetUserId()">Set User Id</button>
-      <button mat-stroked-button (click)="onReload()">Reload</button>
-      <div>
+      <div class="flex-row gap-4">
+        <button mat-stroked-button (click)="onSetUserId()">Set User Id</button>
+        <button mat-stroked-button (click)="onReload()">Reload</button>
+      </div>
+      <div class="p-4">
         <div>Status: {{ ResourceStatusMap[userResource.status()] }}</div>
         <div>Loading: {{ userResource.isLoading() }}</div>
         <div>Has Value: {{ userResource.hasValue() }}</div>
@@ -24,7 +26,7 @@ import { MatButton } from '@angular/material/button';
         @let currentUser = userResource.value();
         @if (currentUser && userResource.hasValue()) {
           <div>
-            <h2>Current User: {{ currentUser.name }}</h2>
+            <h3>Current User: {{ currentUser.name }}</h3>
           </div>
         }
       </div>

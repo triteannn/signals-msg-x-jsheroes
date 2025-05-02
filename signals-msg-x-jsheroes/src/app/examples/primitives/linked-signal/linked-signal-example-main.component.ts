@@ -14,16 +14,23 @@ export type ProductItem = { id: string; name: string; quantity: number };
   selector: 'app-linked-signal-example-main',
   imports: [MatButton],
   template: `
-    <div>
+    <div class="grid-2-col">
       <div>
         <h2>Products</h2>
         @for (product of products(); track product.id) {
-          <div>
-            <h3>NAME: {{ product.name }}</h3>
-            <div>DEFAULT QUANTITY: {{ product.quantity }}</div>
-            <button mat-stroked-button (click)="onProductSelected(product.id)">
-              Select This
-            </button>
+          <div class="grid-2-col">
+            <div>
+              <h3>NAME: {{ product.name }}</h3>
+              <div>DEFAULT QUANTITY: {{ product.quantity }}</div>
+            </div>
+            <div>
+              <button
+                mat-stroked-button
+                (click)="onProductSelected(product.id)"
+              >
+                Select This
+              </button>
+            </div>
           </div>
         }
       </div>
@@ -31,11 +38,17 @@ export type ProductItem = { id: string; name: string; quantity: number };
         <h2>Selected Product</h2>
         @let selected = selectedProduct();
         @if (selected) {
-          <h3>NAME: {{ selected.name }}</h3>
-          <div>Quantity: {{ selectedQuantity() }}</div>
-          <button mat-stroked-button (click)="updateSelectedQuantity()">
-            Decrease
-          </button>
+          <div class="grid-2-col">
+            <div>
+              <h3>NAME: {{ selected.name }}</h3>
+              <div>Quantity: {{ selectedQuantity() }}</div>
+            </div>
+            <div>
+              <button mat-stroked-button (click)="updateSelectedQuantity()">
+                Decrease
+              </button>
+            </div>
+          </div>
         }
       </div>
     </div>

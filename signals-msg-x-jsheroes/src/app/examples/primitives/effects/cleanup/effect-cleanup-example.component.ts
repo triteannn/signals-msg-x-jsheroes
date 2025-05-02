@@ -12,12 +12,14 @@ import { MatButton } from '@angular/material/button';
   imports: [MatButton],
   template: `
     <div>
-      <h1>Effects Basic Example (Second)</h1>
-      <button mat-stroked-button (click)="updateCount()">Add to Count</button>
-      <button mat-stroked-button (click)="onManualDestroy()">
-        Manual Destroy
-      </button>
-      <div>{{ count() }}</div>
+      <h1>Effects Cleanup Example</h1>
+      <div class="flex-row gap-4">
+        <button mat-stroked-button (click)="updateCount()">Add to Count</button>
+        <button mat-stroked-button (click)="onManualDestroy()">
+          Manual Destroy
+        </button>
+      </div>
+      <div class="p-4">Count: {{ count() }}</div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

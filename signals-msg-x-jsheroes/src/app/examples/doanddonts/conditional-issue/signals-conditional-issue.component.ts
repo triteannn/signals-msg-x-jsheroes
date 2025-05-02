@@ -13,11 +13,13 @@ import { MatButton } from '@angular/material/button';
   template: `
     <div>
       <h1>Signals Conditional Issue</h1>
-      <button mat-stroked-button (click)="toggleCount()">
-        Toggle Show Count
-      </button>
-      <button mat-stroked-button (click)="updateCount()">Add to Count</button>
-      <div>
+      <div class="flex-row gap-4">
+        <button mat-stroked-button (click)="toggleCount()">
+          Toggle Show Count
+        </button>
+        <button mat-stroked-button (click)="updateCount()">Add to Count</button>
+      </div>
+      <div class="p-4">
         Show Count: {{ showCount() }} <br />
         Count: {{ count() }} <br />
         Double Count: {{ doubleCount() }} <br />
@@ -30,8 +32,9 @@ export class SignalsConditionalIssueComponent {
   showCount = signal<boolean>(false);
   count = signal<number>(2);
   doubleCount = computed(() => {
+    console.log('Computed Signal Triggered');
     if (this.showCount()) {
-      console.log('Double Count Computed');
+      console.log('Double Count Computed.');
       return this.count() * 2;
     } else {
       return 0;
@@ -40,6 +43,7 @@ export class SignalsConditionalIssueComponent {
 
   constructor() {
     effect(() => {
+      console.log('Effect Triggered');
       if (this.showCount()) {
         console.log('Showing count:', this.count());
       } else {

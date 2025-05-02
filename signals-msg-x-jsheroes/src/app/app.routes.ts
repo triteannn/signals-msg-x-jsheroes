@@ -17,12 +17,17 @@ import { ResourceExampleUseCaseSignalsComponent } from './examples/primitives/re
 import { ResourceExampleUseCaseResourceComponent } from './examples/primitives/resource/usecase/resource-example-usecase-resource.component';
 import { EffectLoopComponent } from './examples/doanddonts/effect-loop/effect-loop.component';
 import { UserManagementComponent } from './examples/state-management/manual/containers/user-management.component';
+import { NormalUserListPageComponent } from './examples/state-management/ngrx/normal-store/pages/normal-user-list-page.component';
 
 export const routes: Routes = [
   // MANUAL SIGNAL STATE MANAGEMENT
   {
     path: AppRoutes.ExampleManualSignalStateManagement,
     component: UserManagementComponent,
+  },
+  {
+    path: AppRoutes.ExampleNgrxNormalStateManagement,
+    component: NormalUserListPageComponent,
   },
   // DO AND DONT
   {

@@ -11,9 +11,9 @@ export const StateManagementRoutingConfig: HeaderRoutingCategory = {
       route: AppRoutes.ExampleManualSignalStateManagement,
     },
     {
-      id: 'state-management-ngrx',
-      name: 'NGRX',
-      route: AppRoutes.ExampleManualSignalStateManagement,
+      id: 'state-management-ngrx-normal',
+      name: 'NGRX Normal Store',
+      route: AppRoutes.ExampleNgrxNormalStateManagement,
     },
   ],
 };

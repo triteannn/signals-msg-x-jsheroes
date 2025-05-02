@@ -19,9 +19,25 @@ import { EffectLoopComponent } from './examples/doanddonts/effect-loop/effect-lo
 import { UserManagementComponent } from './examples/state-management/manual/containers/user-management.component';
 import { NormalUserListPageComponent } from './examples/state-management/ngrx/normal-store/pages/normal-user-list-page.component';
 import { SignalsUserListPageComponent } from './examples/state-management/ngrx/signals-store/pages/signals-user-list-page.component';
+import { ReadonlyWritableComputedSignalsComponent } from './examples/primitives/base-signals/readonly-writable-computed-signals';
+import { InputModelSignalsComponent } from './examples/primitives/base-signals/input-model-signals';
+import { QuerySignalsComponent } from './examples/primitives/base-signals/query-signals';
 
 export const routes: Routes = [
-  // MANUAL SIGNAL STATE MANAGEMENT
+  // BASE SIGNALS
+  {
+    path: AppRoutes.ExampleBaseSignalsReadonlyWritableComputed,
+    component: ReadonlyWritableComputedSignalsComponent,
+  },
+  {
+    path: AppRoutes.ExampleBaseSignalsInputModel,
+    component: InputModelSignalsComponent,
+  },
+  {
+    path: AppRoutes.ExampleBaseSignalsQueries,
+    component: QuerySignalsComponent,
+  },
+  // STATE MANAGEMENT
   {
     path: AppRoutes.ExampleManualSignalStateManagement,
     component: UserManagementComponent,

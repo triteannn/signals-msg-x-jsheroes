@@ -1,6 +1,9 @@
 export enum AppRoutes {
   // PRIMITIVES
-  // MANUAL SIGNAL STATE MANAGEMENT
+  ExampleBaseSignalsReadonlyWritableComputed = 'examples/base-signals/readonly-writable-computed',
+  ExampleBaseSignalsInputModel = 'examples/base-signals/input-model',
+  ExampleBaseSignalsQueries = 'examples/base-signals/queries',
+  // STATE MANAGEMENT
   ExampleManualSignalStateManagement = 'examples/state-management/manual',
   ExampleNgrxNormalStateManagement = 'examples/state-management/ngrx/normal',
   ExampleNgrxSignalStateManagement = 'examples/state-management/ngrx/signal',

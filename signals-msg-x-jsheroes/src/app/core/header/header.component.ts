@@ -8,20 +8,16 @@ import { DonAndDontsRoutingConfig } from '../../examples/doanddonts/doanddonts-r
 import { EffectsRoutingCategory } from '../../examples/primitives/effects/effects-routing.config';
 import { LinkedSignalRoutingConfig } from '../../examples/primitives/linked-signal/linked-signal-routing.config';
 import { ResourceRoutingConfig } from '../../examples/primitives/resource/resource-routing.config';
+import { BaseSignalsRoutingCategory } from '../../examples/primitives/base-signals/base-signals-routing.config';
 
 @Component({
   selector: 'app-header',
-  imports: [MatAnchor, RouterLink, RouterLinkActive, MatMenuModule],
+  imports: [MatAnchor, RouterLink, MatMenuModule],
   template: ` <nav>
     <span>It's a Sign(al)!</span>
     <section class="links-section">
       @for (category of routingCategories; track category.id) {
-        <a
-          mat-button
-          [matMenuTriggerFor]="menu"
-          routerLinkActive="nav-item-active"
-          >{{ category.name }}</a
-        >
+        <a mat-button [matMenuTriggerFor]="menu">{{ category.name }}</a>
         <mat-menu #menu>
           @for (item of category.items; track item.id) {
             <button mat-menu-item [routerLink]="item.route">
@@ -36,10 +32,11 @@ import { ResourceRoutingConfig } from '../../examples/primitives/resource/resour
 })
 export class HeaderComponent {
   protected readonly routingCategories: HeaderRoutingCategory[] = [
-    StateManagementRoutingConfig,
-    DonAndDontsRoutingConfig,
+    BaseSignalsRoutingCategory,
     EffectsRoutingCategory,
+    DonAndDontsRoutingConfig,
     LinkedSignalRoutingConfig,
+    StateManagementRoutingConfig,
     ResourceRoutingConfig,
   ];
 }

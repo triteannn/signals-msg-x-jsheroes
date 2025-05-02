@@ -20,8 +20,9 @@ All code examples can be found in the [`src/app/examples`](signals-msg-x-jsheroe
 ## Installation & Running the Project
 
 1. Clone the repository: `git clone git@github.com:triteannn/signals-msg-x-jsheroes.git`
-2. Run `npm install` to install the dependencies.
-3. Run `npm run start` to start the development server.
+2. Run `cd signals-msg-x-jsheroes` to go to the app directory.
+3. Run `npm install` to install the dependencies.
+4. Run `npm run start` to start the development server.
 
 ## Source Materials
 

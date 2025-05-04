@@ -1,0 +1,53 @@
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.presentation-title {
+  font-size: 1.125em;
+  padding: 1rem;
+}
+
+.faded {
+  opacity: 0.75 !important;
+}
+
+.gap-2rem {
+  gap: 2rem;
+}
+
+.fragment.blur {
+  filter: blur(8px);
+}
+
+.fragment.blur.visible {
+  filter: none;
+}
+
+small {
+  font-size: 1rem !important;
+}
+
+li:not(.toolbar-panel-button, .slide-menu-item) {
+  font-size: 1.75rem;
+}
+
+.theme-color-contrast {
+  color: var(--r-link-color);
+}

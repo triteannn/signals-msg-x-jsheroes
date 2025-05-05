@@ -120,6 +120,62 @@
             </ul>
           </div>
         </section>
+        <section data-menu-title="Default Change Detection">
+          <div class="flex-col items-center">
+            <h4>Change Detection Model (Default)</h4>
+            <img
+              src="images/change_detection.png"
+              width="620"
+              style="margin: 0"
+              alt="kahoot logo"
+            />
+          </div>
+          <aside class="notes">
+            Currently, the behavior of change detection is checking from the component tree (which is AppComponent) and going down the component tree.
+            It checks and compares that values in the class are the same as in the DOM.
+            If there is a change, it updates the DOM.
+            This is all done by the Zone.js mechanism, that listens to various DOM events and based on various asynchronous tasks.
+          </aside>
+        </section>
+        <section data-menu-title="OnPush Change Detection">
+          <div class="flex-col items-center">
+            <h4>Change Detection Model (OnPush)</h4>
+            <ul>
+              <li class="fragment">This is all about limiting the scope of the search</li>
+              <li class="fragment">It does not check a component for changes unless specifically marked</li>
+              <li class="fragment">But it still runs from the AppComponent Root</li>
+            </ul>
+          </div>
+        </section>
+        <section data-menu-title="OnPush Change Detection Marking">
+          <div class="flex-col items-center">
+            <h4>How OnPush Change Detection marks Components as dirty</h4>
+            <ul>
+              <li class="fragment">Immutable Inputs reference has changed</li>
+              <li class="fragment">Manually run markForCheck()</li>
+              <li class="fragment">Component event handler gets triggered (e.g.: button click inside OnPush component)</li>
+              <li class="fragment">Async Pipe</li>
+              <li class="fragment">And of course, right now: "A Signal is changed"</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-menu-title="Signal Change Detection">
+          <div class="flex-col items-center">
+            <h4>Signal Change Detection (Zoneless)</h4>
+            <ul>
+              <li class="fragment">Will offer a fine-grained way to marking a component as dirty</li>
+              <li class="fragment">But it will also trigger change detection for that component</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-menu-title="Migration Tip">
+          <div class="flex-col items-center">
+            <h4>Migration Tip</h4>
+            <div>Make sure all your component have OnPush Change Detection</div>
+          </div>
+        </section>
         <section data-menu-title="Code time!">
           <div class="flex-col items-center">
             <h4>Let's dive right in!</h4>

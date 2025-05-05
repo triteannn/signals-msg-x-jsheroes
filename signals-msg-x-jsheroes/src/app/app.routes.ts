@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AppRoutes } from './shared/app-routes.types';
+import { AppRoutes } from '@shared/app-routes.types';
 import { EffectBasicExampleFirstComponent } from './examples/primitives/effects/basics/effect-basic-example-first.component';
 import { EffectBasicExampleSecondComponent } from './examples/primitives/effects/basics/effect-basic-example-second.component';
 import { EffectBasicExampleThirdComponent } from './examples/primitives/effects/basics/effect-basic-example-third.component';
@@ -22,8 +22,11 @@ import { SignalsUserListPageComponent } from './examples/state-management/ngrx/s
 import { ReadonlyWritableComputedSignalsComponent } from './examples/primitives/base-signals/readonly-writable-computed-signals';
 import { InputModelSignalsParentComponent } from './examples/primitives/base-signals/input-model/input-model-signals-parent';
 import { QuerySignalsParentComponent } from './examples/primitives/base-signals/query-signals/query-signals-parent';
+import { HomeComponent } from './core/home/home.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: AppRoutes.Home, pathMatch: 'full' },
+  { path: AppRoutes.Home, component: HomeComponent },
   // BASE SIGNALS
   {
     path: AppRoutes.ExampleBaseSignalsReadonlyWritableComputed,

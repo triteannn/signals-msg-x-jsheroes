@@ -14,7 +14,9 @@ import { BaseSignalsRoutingCategory } from '../../examples/primitives/base-signa
   selector: 'app-header',
   imports: [MatAnchor, RouterLink, MatMenuModule],
   template: ` <nav>
-    <span>It's a Sign(al)!</span>
+    <span style="cursor: pointer" routerLink="home"
+      >Let's talk Angular Reactivity!</span
+    >
     <section class="links-section">
       @for (category of routingCategories; track category.id) {
         <a mat-button [matMenuTriggerFor]="menu">{{ category.name }}</a>
@@ -34,9 +36,9 @@ export class HeaderComponent {
   protected readonly routingCategories: HeaderRoutingCategory[] = [
     BaseSignalsRoutingCategory,
     EffectsRoutingCategory,
-    DonAndDontsRoutingConfig,
     LinkedSignalRoutingConfig,
-    StateManagementRoutingConfig,
     ResourceRoutingConfig,
+    StateManagementRoutingConfig,
+    DonAndDontsRoutingConfig,
   ];
 }

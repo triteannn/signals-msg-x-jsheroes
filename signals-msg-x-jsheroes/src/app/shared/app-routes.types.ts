@@ -1,4 +1,5 @@
 export enum AppRoutes {
+  Home = 'home',
   // PRIMITIVES
   ExampleBaseSignalsReadonlyWritableComputed = 'examples/base-signals/readonly-writable-computed',
   ExampleBaseSignalsInputModel = 'examples/base-signals/input-model',

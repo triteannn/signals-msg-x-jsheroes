@@ -51,7 +51,6 @@
         </section>
         <section data-menu-title="Presenting the presenters">
           <div class="flex-col gap-2rem">
-            <!-- TODO Both: Update descriptions if needed -->
             <h4>'bout the guys:</h4>
             <div class="flex-col" style="gap: 4rem">
               <div class="fragment flex gap-2rem" style="text-align: left">
@@ -131,10 +130,11 @@
             />
           </div>
           <aside class="notes">
-            Currently, the behavior of change detection is checking from the component tree (which is AppComponent) and going down the component tree.
-            It checks and compares that values in the class are the same as in the DOM.
-            If there is a change, it updates the DOM.
-            This is all done by the Zone.js mechanism, that listens to various DOM events and based on various asynchronous tasks.
+            Currently, the behavior of change detection is checking from the component tree (which
+            is AppComponent) and going down the component tree. It checks and compares that values
+            in the class are the same as in the DOM. If there is a change, it updates the DOM. This
+            is all done by the Zone.js mechanism, that listens to various DOM events and based on
+            various asynchronous tasks.
           </aside>
         </section>
         <section data-menu-title="OnPush Change Detection">
@@ -142,7 +142,9 @@
             <h4>Change Detection Model (OnPush)</h4>
             <ul>
               <li class="fragment">This is all about limiting the scope of the search</li>
-              <li class="fragment">It does not check a component for changes unless specifically marked</li>
+              <li class="fragment">
+                It does not check a component for changes unless specifically marked
+              </li>
               <li class="fragment">But it still runs from the AppComponent Root</li>
             </ul>
           </div>
@@ -153,7 +155,9 @@
             <ul>
               <li class="fragment">Immutable Inputs reference has changed</li>
               <li class="fragment">Manually run markForCheck()</li>
-              <li class="fragment">Component event handler gets triggered (e.g.: button click inside OnPush component)</li>
+              <li class="fragment">
+                Component event handler gets triggered (e.g.: button click inside OnPush component)
+              </li>
               <li class="fragment">Async Pipe</li>
               <li class="fragment">And of course, right now: "A Signal is changed"</li>
             </ul>
@@ -164,7 +168,9 @@
           <div class="flex-col items-center">
             <h4>Signal Change Detection (Zoneless)</h4>
             <ul>
-              <li class="fragment">Will offer a fine-grained way to marking a component as dirty</li>
+              <li class="fragment">
+                Will offer a fine-grained way to marking a component as dirty
+              </li>
               <li class="fragment">But it will also trigger change detection for that component</li>
             </ul>
           </div>

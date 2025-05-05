@@ -22,6 +22,7 @@
 
     <!-- Custom Controls Plugin -->
     <link rel="stylesheet" href="plugin/customcontrols/style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reveal.js-plugins/menu/font-awesome/css/fontawesome.css"
@@ -43,9 +44,7 @@
                 />ngular Reactivity
               </h3>
             </div>
-            <span
-              class="fragment faded"
-              style="transform: translateX(18%); font-size: 1.5rem"
+            <span class="fragment faded" style="font-size: 1.5rem; align-self: flex-end"
               >with Antonio and Tudor</span
             >
           </div>
@@ -65,14 +64,12 @@
                 <div>
                   <span class="theme-color-contrast">Antonio</span>
                   <small
-                    >He is a software developer working mostly in web
-                    development, but is passionate about DevOps and
-                    Architecture. As a Full-Stack Software Engineer, he
-                    specializes in web development with Angular, React, Node.js,
-                    and Spring, while also managing DevOps and being involved in
-                    project architecture topics. He has expertise in AWS, CDK,
-                    and Terraform, and enjoys playing RPG video games and D&D in
-                    his free time.</small
+                    >He is a software developer working mostly in web development, but is passionate
+                    about DevOps and Architecture. As a Full-Stack Software Engineer, he specializes
+                    in web development with Angular, React, Node.js, and Spring, while also managing
+                    DevOps and being involved in project architecture topics. He has expertise in
+                    AWS, CDK, and Terraform, and enjoys playing RPG video games and D&D in his free
+                    time.</small
                   >
                 </div>
               </div>
@@ -80,11 +77,10 @@
                 <div>
                   <span class="theme-color-contrast">Tudor</span>
                   <small
-                    >Frontend Developer and Angular enthusiast with nearly 7
-                    years of experience and, surprisingly enough, no toxic
-                    relationship with CSS yet. With a few training sessions and
-                    talks on the topic, I like bringing high energy, fast-paced
-                    insights, and the occasional bad puns :)</small
+                    >Frontend Developer and Angular enthusiast with nearly 7 years of experience
+                    and, surprisingly enough, no toxic relationship with CSS yet. With a few
+                    training sessions and talks on the topic, I like bringing high energy,
+                    fast-paced insights, and the occasional bad puns :)</small
                   >
                 </div>
                 <img
@@ -120,9 +116,7 @@
               <li class="fragment">Primitives and some use cases</li>
               <li class="fragment">State management</li>
               <li class="fragment">Q&A</li>
-              <li class="fragment">
-                Very neat, little surprise to wrap up in style!
-              </li>
+              <li class="fragment">Very neat, little surprise to wrap up in style!</li>
             </ul>
           </div>
         </section>
@@ -133,7 +127,6 @@
               src="https://giphy.com/embed/ML15sUZFNyMy0Yv55m"
               width="420"
               height="420"
-              frameborder="0"
               class="giphy-embed"
             ></iframe>
           </div>
@@ -147,32 +140,26 @@
               data-aspect-ratio="1"
               data-width="50%"
             ></div>
-            <script
-              type="text/javascript"
-              async
-              src="https://tenor.com/embed.js"
-            ></script>
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
           </div>
         </section>
         <section data-menu-title="Surprise, surprise">
           <div class="flex-col items-center gap-2rem">
-            <h4 class="flex items-center justify-center" style="gap: 1rem">
-              We all like surprises and especially freebies, so it's
-              <img
-                src="images/kahoot-logo.png"
-                class="fragment custom blur"
-                width="128"
-                style="margin: 0; transform: translateY(-5%)"
-                alt="kahoot logo"
-              />
-              time!
+            <h4 style="margin: 0">
+              We all like surprises and especially freebies, so, time for...
             </h4>
+            <img
+              src="images/kahoot-logo.png"
+              class="fragment custom blur"
+              width="120"
+              style="margin: 0"
+              alt="kahoot logo"
+            />
             <iframe
               src="https://giphy.com/embed/t9iZKlppouAANqFZQc"
               class="fragment"
               width="200"
               height="200"
-              frameborder="0"
               class="giphy-embed"
             ></iframe>
             <span class="fragment">Kahoot link/code/QR/whatever</span>
@@ -187,12 +174,7 @@
             class="fragment"
             alt="msg logo"
           />
-          <img
-            src="images/jsheroes-logo.png"
-            width="240"
-            class="fragment"
-            alt="jsheroes logo"
-          />
+          <img src="images/jsheroes-logo.png" width="240" class="fragment" alt="jsheroes logo" />
           <br />
           <span class="fragment" style="font-size: 1.5rem"
             >and to each and every single one of you!</span
@@ -215,25 +197,16 @@
       Reveal.initialize({
         hash: true,
         touch: false,
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [
-          RevealMarkdown,
-          RevealHighlight,
-          RevealNotes,
-          RevealMenu,
-          RevealChalkboard,
-          RevealCustomControls,
-        ],
         menu: {
           // Specifies which side of the presentation the menu will
           // be shown. Use 'left' or 'right'.
-          side: "left",
+          side: 'left',
 
           // Specifies the width of the menu.
           // Can be one of the following:
           // 'normal', 'wide', 'third', 'half', 'full', or
           // any valid css length value
-          width: "wide",
+          width: 'wide',
 
           // Add slide numbers to the titles in the slide list.
           // Use 'true' or format string (same as reveal.js slide numbers)
@@ -246,7 +219,7 @@
           // element will be used.
           // Note: that a section data-menu-title attribute or an element
           // with a menu-title class will take precedence over this option
-          titleSelector: "h1, h2, h3, h4, h5, h6",
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
 
           // If slides do not have a matching title, attempt to use the
           // start of the text content as the title instead
@@ -301,7 +274,7 @@
           // when 'themes' is set to 'true'. If you provide your own
           // list of themes or 'themes' is set to 'false' the
           // 'themesPath' option is ignored.
-          themesPath: "dist/theme/",
+          themesPath: 'dist/theme/',
 
           // Specifies if the transitions menu panel will be shown.
           // Set to 'true' to show the transitions menu panel with
@@ -312,7 +285,7 @@
           transitions: true,
 
           // Transition style
-          transition: "fade", // none/fade/slide/convex/concave/zoom
+          transition: 'fade', // none/fade/slide/convex/concave/zoom
 
           // Adds a menu button to the slides to open the menu panel.
           // Set to 'false' to hide the button.
@@ -359,22 +332,31 @@
         customcontrols: {
           controls: [
             {
-              title: "Toggle overview (O)",
+              title: 'Toggle overview (O)',
               icon: '<i class="fa fa-th"></i>',
-              action: "Reveal.toggleOverview();",
+              action: 'Reveal.toggleOverview();',
             },
             {
               icon: '<i class="fa fa-pen-square"></i>',
-              title: "Toggle chalkboard (B)",
-              action: "RevealChalkboard.toggleChalkboard();",
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();',
             },
             {
               icon: '<i class="fa fa-pen"></i>',
-              title: "Toggle notes canvas (C)",
-              action: "RevealChalkboard.toggleNotesCanvas();",
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();',
             },
           ],
         },
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMenu,
+          RevealChalkboard,
+          RevealCustomControls,
+        ],
       });
     </script>
   </body>

@@ -63,8 +63,9 @@
                 <div>
                   <span class="theme-color-contrast">Antonio</span>
                   <small
-                    >Full-Stack Software Engineer working mostly in Web Development, but with a passion and experience
-                    with DevOps and Architecture. Also as fun fact, enjoys playing D&D with friends in my free time.</small
+                    >Full-Stack Software Engineer working mostly in Web Development, but with a
+                    passion and experience with DevOps and Architecture. Also as fun fact, enjoys
+                    playing D&D with friends in my free time.</small
                   >
                 </div>
               </div>
@@ -126,13 +127,13 @@
             />
           </div>
           <aside class="notes">
-            First, let me speak a little  bit on the nature of change detection in Angular.
-            More specifically, how exactly does a change from our code propagates into the DOM.
-            Currently, the behavior is that a process checks from the component tree root and goes down.
-            It checks for each component and compares that the values in the class are the same as in the DOM.
-            If there is a change, it updates the DOM. This is all done by the Zone.js mechanism,
-            that listens to various DOM events and based on various asynchronous tasks.
-            The main cost is that comparison, not the insertion itself.
+            First, let me speak a little bit on the nature of change detection in Angular. More
+            specifically, how exactly does a change from our code propagates into the DOM.
+            Currently, the behavior is that a process checks from the component tree root and goes
+            down. It checks for each component and compares that the values in the class are the
+            same as in the DOM. If there is a change, it updates the DOM. This is all done by the
+            Zone.js mechanism, that listens to various DOM events and based on various asynchronous
+            tasks. The main cost is that comparison, not the insertion itself.
           </aside>
         </section>
         <section data-menu-title="OnPush Change Detection">
@@ -146,8 +147,7 @@
               <li class="fragment">But it still runs from the AppComponent Root</li>
             </ul>
             <aside class="notes">
-              How can we improve this?
-              Well by change the Change Detection strategy to OnPush
+              How can we improve this? Well by change the Change Detection strategy to OnPush
             </aside>
           </div>
         </section>
@@ -168,7 +168,7 @@
 
         <section data-menu-title="Signal Change Detection">
           <div class="flex-col items-center">
-            <h3>The future is Zoneless</h3>
+            <h4>The future is Zoneless</h4>
             <ul>
               <li class="fragment">
                 Will offer a fine-grained way to marking a component as dirty
@@ -188,23 +188,23 @@
         <section data-menu-title="What is a signal?">
           <div class="flex-col items-center">
             <h4>So what exactly is a Signal?</h4>
-            <div>
-              <div class="fragment">A wrapper over a value of any kind</div>
-              <div class="fragment">that notifies interested consumers</div>
-              <div class="fragment">when the value changes</div>
-              <div class="fragment">and that granularly tracks where is is used</div>
-              <div class="fragment">in order to optimize DOM updates</div>
+            <div style="font-size: 2rem">
+              <div class="fragment custom blur">A wrapper over a value of any kind</div>
+              <div class="fragment custom blur">that notifies interested consumers</div>
+              <div class="fragment custom blur">when the value changes</div>
+              <div class="fragment custom blur">and that granularly tracks where it is used</div>
+              <div class="fragment custom blur">in order to optimize DOM updates</div>
             </div>
           </div>
         </section>
 
-        <section data-menu-title="(TLDR) What is a signal?">
+        <section data-menu-title="(TL;DR) What is a signal?">
           <div class="flex-col items-center">
-            <h4>TLDR</h4>
+            <h4>TL;DR</h4>
           </div>
         </section>
 
-        <section data-menu-title="Code time!">
+        <section data-menu-title="Coding time!">
           <div class="flex-col items-center">
             <h4>Let's dive right in!</h4>
             <iframe

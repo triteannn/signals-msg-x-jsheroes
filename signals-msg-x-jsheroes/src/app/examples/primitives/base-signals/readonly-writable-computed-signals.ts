@@ -47,7 +47,7 @@ type Task = {
               [checked]="task.done"
               (change)="toggleTask(task.id)"
             />
-            <span [style.textDecoration]="task.done ? 'line-through' : 'none'">
+            <span [style.text-decoration]="task.done ? 'line-through' : 'none'">
               {{ task.description }}
             </span>
             <button mat-icon-button (click)="deleteTask(task.id)">
@@ -98,7 +98,7 @@ type Task = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReadonlyWritableComputedSignalsComponent {
-  // Readonly signal for user name
+  // Readonly signal for user's name
   private readonly _user = signal('Tudor');
   protected readonly user = this._user.asReadonly();
 

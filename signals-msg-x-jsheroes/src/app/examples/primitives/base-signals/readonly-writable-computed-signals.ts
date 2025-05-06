@@ -127,7 +127,7 @@ export class ReadonlyWritableComputedSignalsComponent {
     if (!id) return null;
 
     // We deliberately don't track tasks() here
-    const tasks = untracked(() => this.tasks());
+    const tasks = untracked(this.tasks);
 
     const match = tasks.find((task) => task.id === id);
     return match ? match.description : null;

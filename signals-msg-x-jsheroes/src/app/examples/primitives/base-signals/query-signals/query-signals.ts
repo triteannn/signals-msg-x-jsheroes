@@ -5,6 +5,7 @@ import {
   contentChild,
   ElementRef,
   signal,
+  TemplateRef,
   viewChild,
   viewChildren,
 } from '@angular/core';
@@ -18,7 +19,7 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
   template: `
     <h2>Query Signals Demo</h2>
 
-    <section>
+    <section class="items-center">
       <mat-form-field subscriptSizing="dynamic">
         <mat-label>Name</mat-label>
         <input matInput #nameInput />
@@ -27,11 +28,8 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
       <button mat-stroked-button (click)="focusOnInput()">Focus Input</button>
     </section>
 
-    <section>
-      <ng-content></ng-content>
-    </section>
-
-    <section>
+    <section class="flex-col items-start">
+      <button mat-stroked-button (click)="addItem()">Add Item</button>
       @for (item of items(); track $index) {
         <div class="stat">
           <mat-icon>data_object</mat-icon>
@@ -45,6 +43,10 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
           {{ paragraphCount() }}
         </p>
       </div>
+
+      <section>
+        <ng-content></ng-content>
+      </section>
 
       @if (hasProjectedButton()) {
         <div class="stat">
@@ -60,26 +62,22 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
         </div>
       }
     </section>
-
-    <button mat-stroked-button (click)="addItem()">Add Item</button>
   `,
   styles: [
     `
+      .items-start {
+        align-items: flex-start;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
       section {
         display: flex;
         gap: 1rem;
-        margin-bottom: 1rem;
         padding: 1rem;
-
-        &:first-of-type {
-          align-items: center;
-        }
-
-        &:last-of-type {
-          flex-direction: column;
-          justify-content: center;
-          gap: 0;
-        }
       }
       div.stat {
         display: flex;
@@ -93,7 +91,7 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
 export class QuerySignalsComponent {
   protected readonly items = signal<string[]>([]);
 
-  // This token we know exists, so we can go ahead and tell it it's required to skip optional chaining
+  // This token we know exists, so we can go ahead and tell it that it's required to skip optional chaining
   protected readonly nameInputRef =
     viewChild.required<ElementRef<HTMLInputElement>>('nameInput');
 
@@ -106,7 +104,7 @@ export class QuerySignalsComponent {
 
   // Projected content inside ng-content. We won't mark it as required, due to its "external" nature.
   // This is a Material button, so the query will end up in giving us a MatButton instance instead of an ElementRef.
-  // The MatButton ref has access to the elementRef anyways.
+  // The MatButton ref has access to the elementRef anyway.
   protected readonly projectedButtonRef =
     contentChild<MatButton>('projectedButton');
   protected readonly hasProjectedButton = computed(
@@ -118,14 +116,14 @@ export class QuerySignalsComponent {
       '(empty)'
   );
 
-  addItem(): void {
+  protected addItem(): void {
     this.items.update((items) => [
       ...items,
       `New item no. ${items.length + 1}`,
     ]);
   }
 
-  focusOnInput(): void {
+  protected focusOnInput(): void {
     const input = this.nameInputRef();
     input.nativeElement.focus();
   }

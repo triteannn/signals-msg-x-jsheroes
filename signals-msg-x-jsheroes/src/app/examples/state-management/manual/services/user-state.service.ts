@@ -70,7 +70,7 @@ export class UserStateService {
     const result$ = defer(() => {
       const shouldSucceed = Math.random() < 0.5;
       return shouldSucceed
-        ? // delay for this as it nexts
+        ? // delay for this as it goes through 'next'
           this._httpClient.get<MockUser[]>(`api/users`).pipe(delay(2000))
         : // timer here to only create the throwError Observable after 2s have elapsed, as error can't be delayed
           timer(2000).pipe(
@@ -82,14 +82,17 @@ export class UserStateService {
 
     this._fetchUser$
       .pipe(
-        tap(() => this.setIsLoading(true)),
+        tap(() => {
+          this.setError(null);
+          this.setIsLoading(true);
+        }),
         switchMap(() =>
           result$.pipe(
-            finalize(() => this.setIsLoading(false)),
             catchError((error) => {
               this.setError(error);
-              return of(error);
-            })
+              return throwError(() => error);
+            }),
+            finalize(() => this.setIsLoading(false))
           )
         ),
         retry()

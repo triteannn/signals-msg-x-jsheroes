@@ -3,10 +3,12 @@ import { UserStateService } from '../services/user-state.service';
 import { MockUser } from '@shared/resource-mock.utils';
 import { UserListComponent } from '../components/user-list.component';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-user-management',
   template: `<div class="container">
+    <button mat-stroked-button (click)="fetchUsers()">Fetch users!</button>
     @if (isLoadingUsers()) {
       <mat-spinner diameter="36"></mat-spinner>
     } @else if (error()) {
@@ -20,13 +22,15 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
   styles: `
     .container {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
     }
     .error-message {
       color: crimson;
     }
   `,
-  imports: [UserListComponent, MatProgressSpinner],
+  imports: [UserListComponent, MatProgressSpinner, MatButton],
   providers: [UserStateService],
 })
 export class UserManagementComponent {
@@ -42,8 +46,9 @@ export class UserManagementComponent {
     this.users = this._userStateService.users;
     this.isLoadingUsers = this._userStateService.isLoadingUsers;
     this.error = this._userStateService.error;
+  }
 
-    // trigger actions
+  protected fetchUsers(): void {
     this._userStateService.fetchUsers();
   }
 }

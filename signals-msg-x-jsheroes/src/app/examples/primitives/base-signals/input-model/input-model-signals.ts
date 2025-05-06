@@ -34,7 +34,7 @@ import { MatIcon } from '@angular/material/icon';
       </p>
     }
     <p class="flex items-center gap-2">
-      <mat-icon>psychology_alt</mat-icon>Status: {{ status() }}
+      <mat-icon>psychology_alt</mat-icon>Status: {{ status() || '(no status)' }}
     </p>
     <p class="flex items-center gap-2">
       <mat-icon>flight</mat-icon>On holiday:
@@ -92,7 +92,7 @@ export class InputModelSignalsComponent {
     () => this.status().trim() === ''
   );
 
-  resetStatus(): void {
+  protected resetStatus(): void {
     this.status.set('');
   }
 }

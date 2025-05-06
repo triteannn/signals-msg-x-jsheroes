@@ -45,7 +45,7 @@ type Task = {
           <div class="flex items-center gap-2">
             <mat-checkbox
               [checked]="task.done"
-              (change)="toggleTask(task.id)"
+              (change)="toggleTaskCompletion(task.id)"
             />
             <span [style.text-decoration]="task.done ? 'line-through' : 'none'">
               {{ task.description }}
@@ -98,15 +98,15 @@ type Task = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReadonlyWritableComputedSignalsComponent {
-  // Readonly signal for user's name
   private readonly _user = signal('Tudor');
+  // Readonly signal for user's name
   protected readonly user = this._user.asReadonly();
 
   // Writable signals
   protected readonly tasks = signal<Task[]>([]);
   protected readonly newTaskDescription = signal('');
   protected readonly lastAddedTaskId = signal<string | null>(null, {
-    equal: (a, b) => a === b,
+    equal: (taskId1, taskId2) => taskId1 === taskId2,
   });
 
   // Computed signals
@@ -121,7 +121,7 @@ export class ReadonlyWritableComputedSignalsComponent {
   // Only depends reactively on lastAddedTaskId
   // Reads `tasks()` untracked to avoid recomputation on unrelated changes
   protected readonly lastAddedTaskDescription = computed(() => {
-    console.log('[COMPUTED] lastAddedTaskDescription recomputed');
+    console.log('[COMPUTED] lastAddedTaskDescription executed');
     const id = this.lastAddedTaskId();
 
     if (!id) return null;
@@ -149,7 +149,7 @@ export class ReadonlyWritableComputedSignalsComponent {
     this.newTaskDescription.set('');
   }
 
-  toggleTask(id: string): void {
+  toggleTaskCompletion(id: string): void {
     this.tasks.update((tasks) =>
       tasks.map((task) =>
         task.id === id ? { ...task, done: !task.done } : task

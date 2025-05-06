@@ -63,12 +63,8 @@
                 <div>
                   <span class="theme-color-contrast">Antonio</span>
                   <small
-                    >He is a software developer working mostly in web development, but is passionate
-                    about DevOps and Architecture. As a Full-Stack Software Engineer, he specializes
-                    in web development with Angular, React, Node.js, and Spring, while also managing
-                    DevOps and being involved in project architecture topics. He has expertise in
-                    AWS, CDK, and Terraform, and enjoys playing RPG video games and D&D in his free
-                    time.</small
+                    >Full-Stack Software Engineer working mostly in Web Development, but with a passion and experience
+                    with DevOps and Architecture. Also as fun fact, enjoys playing D&D with friends in my free time.</small
                   >
                 </div>
               </div>
@@ -130,11 +126,13 @@
             />
           </div>
           <aside class="notes">
-            Currently, the behavior of change detection is checking from the component tree (which
-            is AppComponent) and going down the component tree. It checks and compares that values
-            in the class are the same as in the DOM. If there is a change, it updates the DOM. This
-            is all done by the Zone.js mechanism, that listens to various DOM events and based on
-            various asynchronous tasks.
+            First, let me speak a little  bit on the nature of change detection in Angular.
+            More specifically, how exactly does a change from our code propagates into the DOM.
+            Currently, the behavior is that a process checks from the component tree root and goes down.
+            It checks for each component and compares that the values in the class are the same as in the DOM.
+            If there is a change, it updates the DOM. This is all done by the Zone.js mechanism,
+            that listens to various DOM events and based on various asynchronous tasks.
+            The main cost is that comparison, not the insertion itself.
           </aside>
         </section>
         <section data-menu-title="OnPush Change Detection">
@@ -147,14 +145,18 @@
               </li>
               <li class="fragment">But it still runs from the AppComponent Root</li>
             </ul>
+            <aside class="notes">
+              How can we improve this?
+              Well by change the Change Detection strategy to OnPush
+            </aside>
           </div>
         </section>
         <section data-menu-title="OnPush Change Detection Marking">
           <div class="flex-col items-center">
             <h4>How OnPush Change Detection marks Components as dirty</h4>
             <ul>
-              <li class="fragment">Immutable Inputs reference has changed</li>
-              <li class="fragment">Manually run markForCheck()</li>
+              <li class="fragment">The immutable Inputs reference have changed</li>
+              <li class="fragment">You manually run markForCheck()</li>
               <li class="fragment">
                 Component event handler gets triggered (e.g.: button click inside OnPush component)
               </li>
@@ -166,7 +168,7 @@
 
         <section data-menu-title="Signal Change Detection">
           <div class="flex-col items-center">
-            <h4>Signal Change Detection (Zoneless)</h4>
+            <h3>The future is Zoneless</h3>
             <ul>
               <li class="fragment">
                 Will offer a fine-grained way to marking a component as dirty
@@ -182,6 +184,19 @@
             <div>Make sure all your component have OnPush Change Detection</div>
           </div>
         </section>
+
+        <section data-menu-title="What is a signal?">
+          <div class="flex-col items-center">
+            <h4>A Signal is:</h4>
+            <div>
+              <span class="fragment">A wrapper over a value</span>
+              <span class="fragment">that notifies consumers when is changed</span>
+              <span class="fragment">and is used to granularly track where is used</span>
+              <span class="fragment">in order to optimize DOM updates</span>
+            </div>
+          </div>
+        </section>
+
         <section data-menu-title="Code time!">
           <div class="flex-col items-center">
             <h4>Let's dive right in!</h4>

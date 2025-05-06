@@ -1,6 +1,6 @@
 # Resource
 
-Provides a way to incorporate async data in your application.
+TLDR: A wrapper over value that needs to be set asynchronously.
 Encapsulates the logic of loading, error handling, and data retrieval.
 
 ## Core Resource Interface

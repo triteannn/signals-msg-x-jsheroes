@@ -23,10 +23,10 @@ export class EffectBasicExampleThirdComponent {
     effect(() => {
       console.log('[Type 4] Effect Triggered', doubleCount());
     });
-    // count.set(4); // second is 4
+    count.set(4); // second is 4
     // Expect to see on the computed value 4 then 8, but effect are asynchronously => just 8
-    setTimeout(() => {
-      count.set(4);
-    });
+    // setTimeout(() => {
+    //   count.set(4);
+    // });
   }
 }

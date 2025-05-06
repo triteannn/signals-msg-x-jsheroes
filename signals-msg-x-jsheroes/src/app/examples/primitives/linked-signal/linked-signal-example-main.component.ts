@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   input,
   linkedSignal,
   signal,
@@ -61,8 +62,14 @@ export class LinkedSignalExampleMainComponent {
   selectedProduct = computed(() =>
     this.products().find((x) => x.id === this.selectedProductId())
   );
+
+  simplerSelectedQuantity = linkedSignal(
+    () =>
+      this.products().find((x) => x.id === this.selectedProductId())
+        ?.quantity ?? 1
+  );
   selectedQuantity = linkedSignal({
-    source: () => ({ selectedProductId: this.selectedProductId }),
+    source: () => ({ selectedProductId: this.selectedProductId }), // when you need the previous state for compute
     computation: (source) => {
       return (
         this.products().find((x) => x.id === source.selectedProductId())
@@ -70,6 +77,22 @@ export class LinkedSignalExampleMainComponent {
       );
     },
   });
+
+  // How would have looked like without using linkedSignal?
+
+  /**
+  selectedQuantityOld = signal<number>(0);
+
+  constructor() {
+    effect(() => {
+      const selectedId = this.selectedProductId();
+      const products = this.products();
+
+      const newValue = products.find((x) => x.id === selectedId)?.quantity ?? 1;
+      this.selectedQuantityOld.set(newValue);
+    });
+  }
+  **/
 
   protected updateSelectedQuantity() {
     this.selectedQuantity.update((x) => x - 1);

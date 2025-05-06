@@ -39,10 +39,11 @@ export class EffectGoodExampleComponent {
       this.updateForm(value);
     });
 
+    // there exists several rxjs signal interop method like toSignal and toObservable
     // what about toObservable? Under the hood, this is still an effect
     toObservable(this.someInput).subscribe((value) => {
       this.updateForm(value);
-    });
+    }); // now we have to deal with the subscription
   }
 
   protected onUpdateInput() {

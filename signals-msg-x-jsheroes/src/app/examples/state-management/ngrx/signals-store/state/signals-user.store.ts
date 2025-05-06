@@ -18,6 +18,7 @@ const signalUsersInitialState: SignalUsersState = {
   loading: false,
 };
 
+// NOTE: not yet integrated with DevTools
 export const SignalUserStore = signalStore(
   { providedIn: 'root' },
   withState(signalUsersInitialState),

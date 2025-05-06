@@ -14,9 +14,7 @@ import { BaseSignalsRoutingCategory } from '../../examples/primitives/base-signa
   selector: 'app-header',
   imports: [MatAnchor, RouterLink, MatMenuModule],
   template: ` <nav>
-    <span style="cursor: pointer" routerLink="home"
-      >Let's talk Angular Reactivity!</span
-    >
+    <span style="cursor: pointer" routerLink="home">It's a Signal!</span>
     <section class="links-section">
       @for (category of routingCategories; track category.id) {
         <a mat-button [matMenuTriggerFor]="menu">{{ category.name }}</a>
